@@ -87,7 +87,7 @@ void setup()
   while (year() ==1970 ) {setSyncProvider(getNtpTime); delay(2000);};
   setSyncInterval(86400);//и интревал час между синхронизациями
   Serial.print("Starting program in ");
-  digitalClockDisplay();// print real time
+  //digitalClockDisplay();// print real time
 
   EEPROM.begin(10);
   checkLightDay(); //подсчитаем какой сегодня световой день
