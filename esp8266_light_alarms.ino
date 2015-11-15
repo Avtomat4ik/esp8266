@@ -115,13 +115,13 @@ void setup()
     LightOn();
   }
 }
-time_t prevDisplay = 0; // when the digital clock was displayed
+time_t prevDisplay = now(); // when the digital clock was displayed
 int delayTime = 600;// время между показыванием времени в ком порт
 
 void loop() {
   //время каждые 600 сек.
   if (timeStatus() != timeNotSet) {
-    if (now() == (prevDisplay + delayTime)) { //update the display only if left 10 sec
+    if (now() > (prevDisplay + delayTime)) { //update the display only if left 10 sec
       prevDisplay = now();
       digitalClockDisplay();
     }
